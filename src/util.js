@@ -1,6 +1,21 @@
 import React from "react";
-import numeral from "numeral";
 import { Circle, Popup } from "react-leaflet";
+import numeral from "numeral";
+
+export const sortData = (data) => {
+  const sortedData = [...data];
+  // sortedData.sort((a, b) => {
+  //   if (a.cases > b.cases) {
+  //     return -1;
+  //   } else {
+  //     return 1;
+  //   }
+  // });
+  // return sortedData;
+  return sortedData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
+};
+
+// DRAW CIRCLES ON THE MAP WITH INTERACTIVE TOOLTIP
 
 const casesTypeColors = {
   cases: {
@@ -21,18 +36,6 @@ const casesTypeColors = {
     half_op: "rgba(251, 68, 67, 0.5)",
     multiplier: 2000,
   },
-};
-
-export const sortData = (data) => {
-  let sortedData = [...data];
-  sortedData.sort((a, b) => {
-    if (a.cases > b.cases) {
-      return -1;
-    } else {
-      return 1;
-    }
-  });
-  return sortedData;
 };
 
 export const prettyPrintStat = (stat) =>

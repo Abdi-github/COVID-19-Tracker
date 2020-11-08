@@ -63,7 +63,7 @@ const buildChartData = (data, casesType) => {
   return chartData;
 };
 
-function LineGraph({ casesType }) {
+function Graph({ casesType }) {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -103,4 +103,4 @@ function LineGraph({ casesType }) {
   );
 }
 
-export default LineGraph;
+export default Graph;
